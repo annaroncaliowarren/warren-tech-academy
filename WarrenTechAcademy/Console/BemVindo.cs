@@ -9,7 +9,7 @@ namespace Console
     internal class BemVindo
     {
         // passa argumento recebe parâmetro
-        public static void Message()
+        public static void Mensagem()
         {
             System.Console.WriteLine("Seja bem vindo");
             System.Console.WriteLine("Digite seu nome: ");

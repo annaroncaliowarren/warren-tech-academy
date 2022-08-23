@@ -1,4 +1,5 @@
 ﻿using Console._0_TipoValor;
+using Console._99_Exercícios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,15 @@ namespace Console
     {
         static void Main(string[] args)
         {
-            BemVindo.Message(); //Chamada de método estático
-            
-            ValueType1 valueType1 = new ValueType1(); //Chamada como objeto
-            valueType1.Execute();
-            
+            //BemVindo.Mensagem(); //Chamada de método estático
+
+            //TipoNumerico tipoNumerico = new TipoNumerico(); //Chamada como objeto
+            //tipoNumerico.Executar();
+
+            //TipoNumerico2.Executar();
+
+            Cadastro.Cadastrar();
+
             System.Console.Read();
         }
     }

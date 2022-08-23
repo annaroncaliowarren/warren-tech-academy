@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Console._0_TipoValor
 {
-    internal class ValueType1
+    internal class TipoNumerico
     {
-        public void Execute()
+        public void Executar()
         {
             // Para plataforma .NET que pode ser usado vários tipos de linguagem se usa o objeto (Byte) para tipar corretamente
             // Se usar apenas C# pode ser usado apenas o tipo (byte)
@@ -29,7 +29,7 @@ namespace Console._0_TipoValor
             ushort ushortMax = ushort.MaxValue;
             System.Console.WriteLine("ushort: " + ushortMin + " até " + ushortMax);
 
-            int intMin = int.MinValue; // 32 bits com números negativos (-2147483648 até 2147483647)
+            int intMin = int.MinValue; // 32 bits com números negativos (-2147483648 até 2147483647) = Int32
             int intMax = int.MaxValue;
             System.Console.WriteLine("int: " + intMin + " até " + intMax);
 
@@ -44,18 +44,6 @@ namespace Console._0_TipoValor
             ulong ulongMin = ulong.MinValue; // 64 bits apenas números positivos (0 até 18446744073709551615) 
             ulong ulongMax = ulong.MaxValue;
             System.Console.WriteLine("ulong: " + ulongMin + " até " + ulongMax);
-
-            float floatMin = float.MinValue; // (-3,402823E+38 até 3,402823E+38)
-            float floatMax = float.MaxValue;
-            System.Console.WriteLine("float: " + floatMin + " até " + floatMax);
-
-            double doubleMin = double.MinValue; // (-1,79769313486232E+308 até 1,79769313486232E+308)
-            double doubleMax = double.MaxValue;
-            System.Console.WriteLine("double: " + doubleMin + " até " + doubleMax);
-
-            decimal decimalMin = decimal.MinValue; // (-79228162514264337593543950335 até 79228162514264337593543950335)
-            decimal decimalMax = decimal.MaxValue;
-            System.Console.WriteLine("decimal: " + decimalMin + " até " + decimalMax);
         }
     }
 }

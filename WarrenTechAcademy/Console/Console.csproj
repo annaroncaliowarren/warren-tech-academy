@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="0-TipoValor\ValueType1.cs" />
+    <Compile Include="0-TipoValor\TipoNumerico.cs" />
+    <Compile Include="0-TipoValor\TipoNumerico2.cs" />
+    <Compile Include="99-Exercícios\Cadastro.cs" />
     <Compile Include="BemVindo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
