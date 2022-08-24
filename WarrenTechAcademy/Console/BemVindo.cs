@@ -13,7 +13,9 @@ namespace Console
         {
             System.Console.WriteLine("Seja bem vindo");
             System.Console.WriteLine("Digite seu nome: ");
+            
             string name = System.Console.ReadLine();
+            
             System.Console.WriteLine("Até breve, " + name);
             System.Console.ReadLine();
         }

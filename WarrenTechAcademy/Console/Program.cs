@@ -1,4 +1,5 @@
 ﻿using Console._0_TipoValor;
+using Console._1_TipoReferencia;
 using Console._99_Exercícios;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,20 @@ namespace Console
 
             //TipoNumerico2.Executar();
 
-            Cadastro.Cadastrar();
+            //new Cadastro().Cadastrar(); // outro jeito de chamar o método
+
+            //TipoNumerico3.Executar();
+
+            //TipoBooleano.Executar();
+
+            //Enumeradores.Executar();
+
+            //Enumeradores2.Executar();
+
+            //Estruturas.Executar();
+
+            TestaPessoas.ExecutarFisica();
+            TestaPessoas.ExecutarJuridica();
 
             System.Console.Read();
         }

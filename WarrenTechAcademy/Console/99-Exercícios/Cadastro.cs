@@ -15,7 +15,7 @@ namespace Console._99_Exercícios
         // 3 - Ao fim da execução, deve exibir o nome completo e idade, juntamente com mensagem
         // de despedida
 
-        public static void Cadastrar()
+        public void Cadastrar()
         {
             System.Console.WriteLine("Seja bem vindo! Vamos realizar um pequeno cadastro?");
             System.Console.Write("\nPrimeiro, digite seu primeiro nome: ");
@@ -29,9 +29,10 @@ namespace Console._99_Exercícios
             System.Console.Write("Por último, a sua idade: ");
 
             byte age = Convert.ToByte(System.Console.ReadLine());
+            //byte age = Byte.Parse(System.Console.ReadLine());   --> outro jeito de converter
 
             System.Console.WriteLine("\nSeu cadastro foi realizado com sucesso!");
-            System.Console.WriteLine($"Nome: {name} {lastName} e idade: {age} anos");
+            System.Console.WriteLine($"Nome completo: {name} {lastName} e idade: {age} anos");
             System.Console.WriteLine("Até a próxima!");
         }
             
