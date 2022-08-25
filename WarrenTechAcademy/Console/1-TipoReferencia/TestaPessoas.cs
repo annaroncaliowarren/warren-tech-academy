@@ -17,7 +17,7 @@ namespace Console._1_TipoReferencia
             PessoaFisica pf2 = (PessoaFisica)pf;  // tem que converter explicitamente porque ele entende que pf é uma pessoa
             PessoaJuridica pj2 = (PessoaJuridica)pj;
 
-            BaseRepository baseRepository = new BaseRepository();
+            BaseRepository<Pessoa> baseRepository = new BaseRepository<Pessoa>();
             baseRepository.Create(p);
             baseRepository.Create(pf2);
             baseRepository.Create(pj2);

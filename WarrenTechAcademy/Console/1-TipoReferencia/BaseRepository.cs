@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace Console._1_TipoReferencia
 {
-    internal class BaseRepository : IRepository
+    internal class BaseRepository<T> : IRepository<T> where T : BaseModel
     {
-        List<Pessoa> pessoas;
+        List<T> list;
 
         public BaseRepository()
         {
-            this.pessoas = new List<Pessoa>();
+            this.list = new List<T>();
         }
 
-        public string Create(Pessoa p)
+        public string Create(T p)
         {
-            this.pessoas.Add(p);
-            return $"Cadastro de {p.Nome} salvo com sucesso!";
+            this.list.Add(p);
+            return $"O dado de id: {p.Id} foi salvo com sucesso!";
         }
 
-        public List<Pessoa> Read()
+        public List<T> Read()
         {
-            return pessoas;
+            return list;
         }
 
         public string Delete(int id)
@@ -31,9 +31,9 @@ namespace Console._1_TipoReferencia
             return $"Cadastro com id: {id} foi deletado com sucesso!";
         }
 
-        public string Update(Pessoa p)
+        public string Update(T p)
         {
-            return $"Cadastro {p.Nome} foi alterado com sucesso!";
+            return $"Cadastro {p.Id} foi alterado com sucesso!";
         }
     }
 }

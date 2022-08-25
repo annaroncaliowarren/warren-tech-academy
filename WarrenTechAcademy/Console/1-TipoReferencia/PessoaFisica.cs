@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Console._1_TipoReferencia
 {
-    internal class PessoaFisica : Pessoa  // --> herança
+    internal class PessoaFisica  : Pessoa // --> herança
     {
         public string Cpf { get; set; }
 

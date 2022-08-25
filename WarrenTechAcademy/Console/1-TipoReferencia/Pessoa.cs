@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Console._1_TipoReferencia
 {
-    internal class Pessoa
+    internal class Pessoa : BaseModel
     {
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
