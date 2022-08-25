@@ -8,39 +8,23 @@ namespace Console._1_TipoReferencia
 {
     internal class TestaPessoas
     {
-        public static void ExecutarFisica()
+        public static void ExecutarPessoa()
         {
-            PessoaFisica pessoaFisica1 = new PessoaFisica("Anna", "Roncalio", "07548266925");
-            PessoaFisica pessoaFisica2 = new PessoaFisica("Djonathan", "Krause", "25686495623");
+            Pessoa p = new Pessoa("Anna", "Roncalio");
+            Pessoa pf = new PessoaFisica("Anna Cecilia", "Roncalio", "25684599835");
+            Pessoa pj = new PessoaJuridica("Anna C", "Roncalio", "56842563000122");
 
-            PessoaFisicaRepository pessoaFisicaRepository = new PessoaFisicaRepository();
+            PessoaFisica pf2 = (PessoaFisica)pf;  // tem que converter explicitamente porque ele entende que pf é uma pessoa
+            PessoaJuridica pj2 = (PessoaJuridica)pj;
 
-            string msg = pessoaFisicaRepository.Create(pessoaFisica1);
-            pessoaFisicaRepository.Create(pessoaFisica2);
-            System.Console.WriteLine(msg);
+            BaseRepository baseRepository = new BaseRepository();
+            baseRepository.Create(p);
+            baseRepository.Create(pf2);
+            baseRepository.Create(pj2);
 
-            System.Console.WriteLine(pessoaFisicaRepository.Update(pessoaFisica2));
-            System.Console.WriteLine(pessoaFisicaRepository.Delete(2));
-
-            List<PessoaFisica> pessoasFisicas = pessoaFisicaRepository.Read();
-            foreach (PessoaFisica p in pessoasFisicas)  // pode ser usado o tipo especifico ou var
+            foreach (var pessoa in baseRepository.Read())
             {
-                System.Console.WriteLine(p.Saudacao());
-            }
-        }
-        public static void ExecutarJuridica()
-        {
-            PessoaJuridica pessoaJuridica = new PessoaJuridica("João", "Roncalio", "46256382000122");
-            PessoaJuridica pessoaJuridica2 = new PessoaJuridica("Magda", "Carneiro", "46256782000122");
-
-            PessoaJuridicaRepository pessoaJuridicaRepository = new PessoaJuridicaRepository();
-            pessoaJuridicaRepository.Create(pessoaJuridica);
-            pessoaJuridicaRepository.Create(pessoaJuridica2);
-
-            List<PessoaJuridica> pessoasJuridicas = pessoaJuridicaRepository.Read();
-            foreach (PessoaJuridica p in pessoasJuridicas)
-            {
-                System.Console.WriteLine(p.Saudacao());
+                System.Console.WriteLine(pessoa.Saudacao());
             }
         }
     }

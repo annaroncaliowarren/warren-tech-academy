@@ -50,6 +50,8 @@
     <Compile Include="0-TipoValor\TipoNumerico.cs" />
     <Compile Include="0-TipoValor\TipoNumerico2.cs" />
     <Compile Include="0-TipoValor\TipoNumerico3.cs" />
+    <Compile Include="1-TipoReferencia\BaseRepository.cs" />
+    <Compile Include="1-TipoReferencia\IRepository.cs" />
     <Compile Include="1-TipoReferencia\PessoaJuridica.cs" />
     <Compile Include="1-TipoReferencia\PessoaFisicaRepository.cs" />
     <Compile Include="1-TipoReferencia\Pessoa.cs" />

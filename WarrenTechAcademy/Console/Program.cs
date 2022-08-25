@@ -32,8 +32,7 @@ namespace Console
 
             //Estruturas.Executar();
 
-            TestaPessoas.ExecutarFisica();
-            TestaPessoas.ExecutarJuridica();
+            TestaPessoas.ExecutarPessoa();
 
             System.Console.Read();
         }
