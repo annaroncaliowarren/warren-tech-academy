@@ -16,5 +16,10 @@ namespace Console._1_TipoReferencia
             this.Nome = nome;
             this.Especie = especie;
         }
+
+        public virtual string ListarAnimal()
+        {
+            return $"\nEspécie: {this.Especie} \nNome: {this.Nome}";
+        }
     }
 }

@@ -16,5 +16,10 @@ namespace Console._1_TipoReferencia
             this.Nome = nome;
             this.Descricao = descricao;
         }
+
+        public virtual string ListarProduto()
+        {
+            return $"\nProduto: {this.Nome} - Descrição: {this.Descricao}";
+        }
     }
 }

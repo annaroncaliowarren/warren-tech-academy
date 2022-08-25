@@ -24,6 +24,14 @@ namespace Console._1_TipoReferencia
             {
                 System.Console.WriteLine(pessoaFisica.Saudacao());
             }
+
+            PessoaJuridicaRepository pjRepository = new PessoaJuridicaRepository();
+            pjRepository.Create(pj2);
+
+            foreach (var pessoaJuridica in pjRepository.Read())
+            {
+                System.Console.WriteLine(pessoaJuridica.Saudacao());
+            }
         }
 
         public static void ExecutarProduto()
@@ -37,7 +45,7 @@ namespace Console._1_TipoReferencia
 
             foreach (var prod in produtoRepository.Read())
             {
-                System.Console.WriteLine($"\nProduto: {prod.Nome} - Descrição: {prod.Descricao}");
+                System.Console.WriteLine(prod.ListarProduto());
             }
         }
 
@@ -54,7 +62,7 @@ namespace Console._1_TipoReferencia
 
             foreach (var animal in animalRepository.Read())
             {
-                System.Console.WriteLine($"\nEspécie: {animal.Especie} \nNome: {animal.Nome}");
+                System.Console.WriteLine(animal.ListarAnimal());
             }
         }
     }
