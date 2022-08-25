@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Console._1_TipoReferencia
 {
-    internal class Produto : BaseModel
+    internal class Animal : BaseModel
     {
         public string Nome { get; set; }
-        public string Descricao { get; set; }
+        public string Especie { get; set; }
 
-        public Produto(string nome, string descricao)
+        public Animal(string nome, string especie)
         {
             this.Nome = nome;
-            this.Descricao = descricao;
+            this.Especie = especie;
         }
     }
 }

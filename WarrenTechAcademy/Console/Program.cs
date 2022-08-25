@@ -32,7 +32,9 @@ namespace Console
 
             //Estruturas.Executar();
 
-            TestaPessoas.ExecutarPessoa();
+            Testar.ExecutarPessoa();
+            Testar.ExecutarAnimal();
+            Testar.ExecutarProduto();
 
             System.Console.Read();
         }

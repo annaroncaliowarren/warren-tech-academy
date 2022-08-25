@@ -15,25 +15,25 @@ namespace Console._1_TipoReferencia
             this.list = new List<T>();
         }
 
-        public string Create(T p)
+        public virtual string Create(T p)
         {
             this.list.Add(p);
             return $"O dado de id: {p.Id} foi salvo com sucesso!";
         }
 
-        public List<T> Read()
+        public virtual List<T> Read()
         {
             return list;
         }
 
-        public string Delete(int id)
+        public virtual string Delete(int id)
         {
             return $"Cadastro com id: {id} foi deletado com sucesso!";
         }
 
-        public string Update(T p)
+        public virtual string Update(T p)
         {
-            return $"Cadastro {p.Id} foi alterado com sucesso!";
+            return $"Cadastro com id: {p.Id} foi alterado com sucesso!";
         }
     }
 }
