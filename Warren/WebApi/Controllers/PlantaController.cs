@@ -1,28 +1,29 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Data.Model;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Data.Repository;
+using Data.Model;
 
 namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AnimalController : ControllerBase
+    public class PlantaController : ControllerBase
     {
-        private AnimalRepository repository;
+        private PlantaRepository repository;
 
-        public AnimalController()
+        public PlantaController()
         {
-            this.repository = new AnimalRepository();
+            this.repository = new PlantaRepository();
         }
 
         [HttpGet]
-        public List<Animal> Get()
+        public List<Planta> Get()
         {
             return repository.GetAll();
         }
 
         [HttpPost]
-        public string Post(Animal model)
+        public string Post(Planta model)
         {
             return repository.Create(model);
         }
@@ -34,7 +35,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPut]
-        public string Update(Animal model)
+        public string Update(Planta model)
         {
             return repository.Update(model);
         }
