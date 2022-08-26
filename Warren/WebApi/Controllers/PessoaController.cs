@@ -7,5 +7,10 @@ namespace WebApi.Controllers
     [ApiController]
     public class PessoaController : ControllerBase
     {
+        [HttpGet]
+        public string Get()
+        {
+            return "Isso é uma pessoa";
+        }
     }
 }
