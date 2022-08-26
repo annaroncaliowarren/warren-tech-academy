@@ -12,6 +12,7 @@ namespace Data.Context
     {
         #region Props
         public DbSet<Animal> Animal { get; set; } // para conectar o model com tabela do banco / cria tabela
+        public DbSet<Planta> Planta { get; set; }
 
         #endregion
 

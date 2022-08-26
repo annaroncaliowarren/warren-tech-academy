@@ -9,29 +9,29 @@ namespace Data.Repository
 {
     public class BaseRepository<T> : IRepository<T> where T : BaseModel
     {
-        public string Create(T model)
+        public virtual string Create(T model)
         {
             return "Criado";
         }
 
-        public string Delete(int id)
+        public virtual string Delete(int id)
         {
             return "Deletado";
         }
 
-        public List<T> GetAll()
+        public virtual List<T> GetAll()
         {
             List<T> models = new List<T>();
             return models;
         }
 
-        public T GetById(int id)
+        public virtual T GetById(int id)
         {
             T model = null;
             return model;
         }
 
-        public string Update(T model)
+        public virtual string Update(T model)
         {
             return "Alterado";
         }
