@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Data.Model;
+using Data.Repository;
 
 namespace WebApi.Controllers
 {
@@ -19,6 +20,14 @@ namespace WebApi.Controllers
             };
 
             return a1;
+        }
+
+        [HttpPost]
+        public string Post(Animal model)
+        {
+            AnimalRepository repo = new AnimalRepository();
+
+            return repo.Create(model);
         }
     }
 }
