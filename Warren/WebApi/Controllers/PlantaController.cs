@@ -5,9 +5,10 @@ using Data.Model;
 
 namespace WebApi.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class PlantaController : GenericController<PlantaModel>
+    public class PlantaController : GenericController<PlantaModel, PlantaRepository>
     {
+        public PlantaController() : base(new PlantaRepository())
+        {
+        }
     }
 }

@@ -4,9 +4,10 @@ using Data.Repository;
 
 namespace WebApi.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class AnimalController : GenericController<AnimalModel>
+    public class AnimalController : GenericController<AnimalModel, AnimalRepository>
     {
+        public AnimalController() : base(new AnimalRepository())
+        {
+        }
     }
 }
