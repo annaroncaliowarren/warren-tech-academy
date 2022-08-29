@@ -19,7 +19,7 @@ namespace Data.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) // override de um método pronto do entity framework
         {
-            optionsBuilder.UseNpgsql("Host=localhost; Port=5435; Database=postgres; UserId=postgres; Password=123456"); // info para conectar no banco de dados
+            optionsBuilder.UseNpgsql("Host=192.168.0.43; Port=5435; Database=postgres; UserId=postgres; Password=123456"); // info para conectar no banco de dados
         }
     }
 }
