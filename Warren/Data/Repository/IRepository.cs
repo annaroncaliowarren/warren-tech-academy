@@ -9,10 +9,10 @@ namespace Data.Repository
 {
     internal interface IRepository<T> where T : BaseModel
     {
-        string Create(T model);
-        string Update(T model);
-        string Delete(int id);
-        List<T> GetAll();
+        Dictionary<string, dynamic> Create(T model);
+        Dictionary<string, dynamic> Update(T model);
+        Dictionary<string, dynamic> Delete(int id);
+        Dictionary<string, dynamic> GetAll();
         T GetById(int id);
     }
 }

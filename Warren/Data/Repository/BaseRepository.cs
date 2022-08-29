@@ -1,5 +1,6 @@
 ﻿using Data.Context;
 using Data.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,47 +11,55 @@ namespace Data.Repository
 {
     public class BaseRepository<T> : IRepository<T> where T : BaseModel
     {
-        public virtual List<T> GetAll()
+        Dictionary<string, dynamic> dictionaryModels;
+      
+        public BaseRepository()
         {
-            List<T> list = new List<T>();
-
-            using (WarrenContext warrenContext = new WarrenContext()) // para não deixar o banco aberto toda vez que o método é acionado
-            {
-                list = warrenContext.Set<T>().ToList();
-            }
-
-            return list;
+            dictionaryModels = new Dictionary<string, dynamic>();
         }
 
-        public virtual string Create(T model)
+        public virtual Dictionary<string, dynamic> GetAll()
+        {
+            using (WarrenContext warrenContext = new WarrenContext()) // para não deixar o banco aberto toda vez que o método é acionado
+            {
+                List<T> list = warrenContext.Set<T>().ToList();
+                dictionaryModels.Add("All", list);
+            }
+
+            return dictionaryModels;
+        }
+
+        public virtual Dictionary<string, dynamic> Create(T model)
         {
             using (WarrenContext warrenContext = new WarrenContext())
             {
                 warrenContext.Set<T>().Add(model);
+                dictionaryModels.Add("Add", model);
                 warrenContext.SaveChanges();
             }
 
-            return "Criado";
+            return dictionaryModels;
         }
 
-        public virtual string Delete(int id)
+        public virtual Dictionary<string, dynamic> Delete(int id)
         {
             T model = GetById(id);
 
             using (WarrenContext warrenContext = new WarrenContext())
             {
-                warrenContext.Entry<T>(model).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
+                warrenContext.Entry<T>(model).State = EntityState.Deleted;
+                dictionaryModels.Add("Deleted", model);
                 warrenContext.SaveChanges();
             }
 
-            return "Deletado";
+            return dictionaryModels;
         }
 
         public virtual T GetById(int id)
         {
             T model = null;
 
-            using(WarrenContext warrenContext = new WarrenContext())
+            using (WarrenContext warrenContext = new WarrenContext())
             {
                 model = warrenContext.Set<T>().Find(id);
             }
@@ -58,15 +67,18 @@ namespace Data.Repository
             return model;
         }
 
-        public virtual string Update(T model)
+        public virtual Dictionary<string, dynamic> Update(T model)
         {
-            using(WarrenContext warrenContext = new WarrenContext())
+            dictionaryModels.Add("Old", GetById(model.Id));
+
+            using (WarrenContext warrenContext = new WarrenContext())
             {
-                warrenContext.Entry<T>(model).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                warrenContext.Entry<T>(model).State = EntityState.Modified;
+                dictionaryModels.Add("New", model);
                 warrenContext.SaveChanges();
             }
 
-            return "Alterado";
+            return dictionaryModels;
         }
     }
 }

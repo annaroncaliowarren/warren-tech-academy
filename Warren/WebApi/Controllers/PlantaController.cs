@@ -17,25 +17,31 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
-        public List<Planta> Get()
+        public Dictionary<string, dynamic> Get()
         {
             return repository.GetAll();
         }
 
+        [HttpGet]
+        public Planta GetById(int id)
+        {
+            return repository.GetById(id);
+        }
+
         [HttpPost]
-        public string Post(Planta model)
+        public Dictionary<string, dynamic> Post(Planta model)
         {
             return repository.Create(model);
         }
 
         [HttpDelete]
-        public string Delete(int id)
+        public Dictionary<string, dynamic> Delete(int id)
         {
             return repository.Delete(id);
         }
 
         [HttpPut]
-        public string Update(Planta model)
+        public Dictionary<string, dynamic> Put(Planta model)
         {
             return repository.Update(model);
         }
