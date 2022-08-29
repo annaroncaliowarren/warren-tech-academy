@@ -22,7 +22,7 @@ namespace WebApi.Controllers
             return repository.GetAll();
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public Planta GetById(int id)
         {
             return repository.GetById(id);
