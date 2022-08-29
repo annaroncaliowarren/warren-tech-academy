@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Data.Model
 {
-    public class Planta : BaseModel
+    public class AnimalModel : BaseModel
     {
+        public string Especie { get; set; }
         public string Nome { get; set; }
-        public string Cor { get; set; }
-        public string Tipo { get; set; }
+        public float Peso { get; set; }
     }
 }

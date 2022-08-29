@@ -11,8 +11,8 @@ namespace Data.Context
     public class WarrenContext : DbContext // classe pronta do entity framework para conectar no banco de dados
     {
         #region Props
-        public DbSet<Animal> Animal { get; set; } // para conectar o model com tabela do banco / cria tabela
-        public DbSet<Planta> Planta { get; set; }
+        public DbSet<AnimalModel> Animal { get; set; } // para conectar o model com tabela do banco / cria tabela
+        public DbSet<PlantaModel> Planta { get; set; }
 
         #endregion
 
