@@ -15,5 +15,11 @@ namespace Data.Repository
             model.Senha = Criptografia.Criptografar(model.Senha);
             return base.Create(model);
         }
+
+        public override Dictionary<string, dynamic> Update(UsuarioModel model)
+        {
+            model.Senha = Criptografia.Criptografar(model.Senha);
+            return base.Update(model);
+        }
     }
 }
