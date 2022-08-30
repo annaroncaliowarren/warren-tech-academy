@@ -16,31 +16,31 @@ namespace WebApi.Controllers
             this.repository = repo;
         }
 
-        [HttpGet]
+        [HttpGet("GetAll")]
         public Dictionary<string, dynamic> Get()
         {
             return repository.GetAll();
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("GetById/{id}")]
         public T GetById(int id)
         {
             return repository.GetById(id);
         }
 
-        [HttpPost]
+        [HttpPost("Post")]
         public Dictionary<string, dynamic> Post(T model)
         {
             return repository.Create(model);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("Delete/{id}")]
         public Dictionary<string, dynamic> Delete(int id)
         {
             return repository.Delete(id);
         }
 
-        [HttpPut]
+        [HttpPut("Put")]
         public Dictionary<string, dynamic> Put(T model)
         {
             return repository.Update(model);
