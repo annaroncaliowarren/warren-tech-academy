@@ -1,4 +1,5 @@
-﻿using Data.Model;
+﻿using Data.Context;
+using Data.Model;
 using Data.Utils;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,19 @@ namespace Data.Repository
         {
             model.Senha = Criptografia.Criptografar(model.Senha);
             return base.Update(model);
+        }
+
+        public UsuarioModel Logon(string email, string senha)
+        {
+            senha = Criptografia.Criptografar(senha);
+            UsuarioModel usuario = new UsuarioModel();
+
+            using (WarrenContext contexto = new WarrenContext())
+            {
+                usuario = contexto.Usuario.Where(u => u.Email == email && u.Senha == senha).FirstOrDefault();
+            }
+
+            return usuario;
         }
     }
 }
