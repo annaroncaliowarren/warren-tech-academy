@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
 {
-    public class UsuarioController : GenericController<UsuarioModel, UsuarioRepository>
+    public class ProdutoController : GenericController<ProdutoModel, ProdutoRepository>
     {
     }
 }

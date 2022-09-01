@@ -9,41 +9,41 @@ namespace WebApi.Controllers
     [ApiController]
     public class GenericController<T, R> : ControllerBase where T : BaseModel where R : BaseRepository<T>
     {
-        private R repository;
+        private R _repository;
 
-        public GenericController(R repo)
+        public GenericController()
         {
-            this.repository = repo;
+            this._repository = Activator.CreateInstance<R>();
         }
 
         [HttpGet]
         public Dictionary<string, dynamic> Get()
         {
-            return repository.GetAll();
+            return _repository.GetAll();
         }
 
         [HttpGet("{id}")]
         public T GetById(int id)
         {
-            return repository.GetById(id);
+            return _repository.GetById(id);
         }
 
         [HttpPost]
         public Dictionary<string, dynamic> Post(T model)
         {
-            return repository.Create(model);
+            return _repository.Create(model);
         }
 
         [HttpDelete("{id}")]
         public Dictionary<string, dynamic> Delete(int id)
         {
-            return repository.Delete(id);
+            return _repository.Delete(id);
         }
 
         [HttpPut]
         public Dictionary<string, dynamic> Put(T model)
         {
-            return repository.Update(model);
+            return _repository.Update(model);
         }
     }
 }

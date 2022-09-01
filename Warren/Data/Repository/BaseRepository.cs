@@ -18,15 +18,16 @@ namespace Data.Repository
             dictionaryModels = new Dictionary<string, dynamic>();
         }
 
-        public virtual Dictionary<string, dynamic> GetAll()
+        public virtual List<T> GetAll()
         {
+            List<T> list = new List<T>();
+
             using (WarrenContext warrenContext = new WarrenContext()) // para não deixar o banco aberto toda vez que o método é acionado
             {
-                List<T> list = warrenContext.Set<T>().ToList();
-                dictionaryModels.Add("All", list);
+                list = warrenContext.Set<T>().ToList();
             }
 
-            return dictionaryModels;
+            return list;
         }
 
         public virtual Dictionary<string, dynamic> Create(T model)

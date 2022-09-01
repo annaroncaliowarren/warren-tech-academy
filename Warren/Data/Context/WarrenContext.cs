@@ -14,6 +14,8 @@ namespace Data.Context
         public DbSet<AnimalModel> Animal { get; set; } // para conectar o model com tabela do banco / cria tabela
         public DbSet<PlantaModel> Planta { get; set; }
         public DbSet<UsuarioModel> Usuario { get; set; }
+        public DbSet<ProdutoModel> Produto { get; set; }
+        public DbSet<CategoriaModel> Categoria { get; set; }
 
         #endregion
 

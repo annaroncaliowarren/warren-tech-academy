@@ -12,7 +12,7 @@ namespace Data.Repository
         Dictionary<string, dynamic> Create(T model);
         Dictionary<string, dynamic> Update(T model);
         Dictionary<string, dynamic> Delete(int id);
-        Dictionary<string, dynamic> GetAll();
+        List<T> GetAll();
         T GetById(int id);
     }
 }
